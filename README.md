@@ -1,103 +1,103 @@
 ## Cheapest_Hamiltonian_Circuit
 This algorithm finds the cheapest path for to complete a Hamiltonian Circuit in a undirected graph using the backtracking method.
 
-## Pseudocode:
-# STRUCTURE Info:
-define VName as STRING
-define weight as INTEGER
-CONSTRUCTOR Info()
-VName ← “ ”
-weight ←0
-END CONSTRUCTOR
-END STRUCTURE
-STRUCTURE Node
-define data as INFO
-define next as NODE *
-CONSTRUCTOR NODE()
-next ← NULL
-END CONSTRUCTOR
-CONSTRUCTOR NODE(Info toadd)
-data.VName ← toadd.VName
-Data.weight ← toadd.weight
-next = NULL
-END CONSTRUCTOR
-END STRUCTURE
-CLASS Queue
-define first as NODE*
-define last as NODE* // used last to make enqueue O(1)
-public:
-CONSTRUCTOR Queue()
-first←NULL
-last ← NULL
-END CONSTRUCTOR
-PROCEDURE Enqueue(Info toadd)
-if(first is NULL) then
-First ← new Node(toadd)
-last ← first
-else
-last→next ← new Node(toadd)
-last ← last→next
-Endif
-END PROCEDURE
-BOOLEAN FUNCTION inQueue(Info tocheck)
-define temp as NODE*
-temp ← first
-while(temp is not NULL)
-if(temp→data == tocheck) then
-Return TRUE
-Endif
-temp ← temp→next
-Endwhile
-RETURN FALSE
-PROCEDURE Dequeue()
-define temp as NODE*
-temp ← first
-if(first is NOT NULL) then
-first ← first→next
-Endif
-END PROCEDURE
-PROCEDURE DequeueLast()
-define temp as NODE*
-define temp2 as NODE*
-temp ← last
-temp2 ← first
-if(first is last) then
-first ← NULL
-Endif
-last ← NULL
-END PROCEDURE
-BOOLEAN FUNCTION isEmpty()
-if(first is NULL) then
-Return TRUE
-Endif
-RETURN FALSE
-INTEGER FUNCTION countQUEUE()
-define temp as NODE*
-temp ← first
-define count as INTEGER
-count←0
-while(temp is NOT NULL)
-count← count+1
-temp← temp→next
-Endwhile
-RETURN count
-END CLASS
-CLASS Stack
-define top as NODE*
-Public:
-CONSTRUCTOR Stack()
-top ← NULL
-END CONSTRUCTOR
-PROCEDURE push(Info toadd)
-define temp as NODE*
-if(top is NULL) then
-Top← new Node(toadd)
-else
-temp← new Node(toadd)
-temp→next ←top
-top ← temp
-Endif
-END PROCEDURE
+## Pseudocode: <br / >
+# STRUCTURE Info: <br / >
+define VName as STRING <br / >
+define weight as INTEGER <br / >
+CONSTRUCTOR Info() <br / >
+VName ← “ ” <br / >
+weight ←0 <br / >
+END CONSTRUCTOR <br / >
+END STRUCTURE <br / >
+STRUCTURE Node <br / >
+define data as INFO <br / >
+define next as NODE * <br / >
+CONSTRUCTOR NODE() <br / >
+next ← NULL <br / >
+END CONSTRUCTOR <br / >
+CONSTRUCTOR NODE(Info toadd) <br / >
+data.VName ← toadd.VName <br / >
+Data.weight ← toadd.weight <br / >
+next = NULL <br / >
+END CONSTRUCTOR <br / >
+END STRUCTURE <br / >
+CLASS Queue <br / >
+define first as NODE* <br / >
+define last as NODE* // used last to make enqueue O(1) <br / >
+public: <br / >
+CONSTRUCTOR Queue() <br / >
+first←NULL <br / >
+last ← NULL <br / >
+END CONSTRUCTOR <br / >
+PROCEDURE Enqueue(Info toadd) <br / >
+if(first is NULL) then <br / >
+First ← new Node(toadd) <br / >
+last ← first <br / >
+else <br / >
+last→next ← new Node(toadd) <br / >
+last ← last→next <br / >
+Endif <br / >
+END PROCEDURE <br / >
+BOOLEAN FUNCTION inQueue(Info tocheck) <br / >
+define temp as NODE* <br / >
+temp ← first <br / >
+while(temp is not NULL) <br / >
+if(temp→data == tocheck) then <br / >
+Return TRUE <br / >
+Endif <br / >
+temp ← temp→next <br / >
+Endwhile <br / >
+RETURN FALSE <br / >
+PROCEDURE Dequeue() <br / >
+define temp as NODE* <br / >
+temp ← first <br / >
+if(first is NOT NULL) then <br / >
+first ← first→next <br / >
+Endif <br / >
+END PROCEDURE <br / >
+PROCEDURE DequeueLast() <br / >
+define temp as NODE* <br / >
+define temp2 as NODE* <br / >
+temp ← last <br / >
+temp2 ← first <br / >
+if(first is last) then <br / >
+first ← NULL <br / >
+Endif <br / >
+last ← NULL <br / >
+END PROCEDURE <br / >
+BOOLEAN FUNCTION isEmpty() <br / >
+if(first is NULL) then <br / >
+Return TRUE <br / >
+Endif <br / >
+RETURN FALSE <br / >
+INTEGER FUNCTION countQUEUE() <br / >
+define temp as NODE* <br / >
+temp ← first <br / >
+define count as INTEGER <br / >
+count←0 <br / >
+while(temp is NOT NULL) <br / >
+count← count+1 <br / >
+temp← temp→next <br / >
+Endwhile <br / >
+RETURN count <br / >
+END CLASS <br / >
+CLASS Stack <br / >
+define top as NODE* <br / >
+Public: <br / >
+CONSTRUCTOR Stack() <br / >
+top ← NULL <br / >
+END CONSTRUCTOR <br / >
+PROCEDURE push(Info toadd) <br / >
+define temp as NODE* <br / >
+if(top is NULL) then <br / >
+Top← new Node(toadd) <br / >
+else <br / >
+temp← new Node(toadd) <br / >
+temp→next ←top <br / >
+top ← temp <br / >
+Endif <br / >
+END PROCEDURE <br / >
 FUNCTION instack(tocheck: string) returns bool
 temp <-- top
 while (temp IS NOT EQUAL NULL) do
